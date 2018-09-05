@@ -1,0 +1,101 @@
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+          <mat-card >
+              <div class="container">
+                  <div class="row">
+                    <div class="col text-left">
+                      <a class="btn btn-primary btn-sm report-back-button" routerLink="/">Back</a>
+                    </div>
+                    <div class="col text-right">
+                            <a class="btn btn-primary btn-sm" routerLink="/add-sale" role="button">Add Flash Sale</a>
+                          </div></div>
+                  <div class="container">
+                    <h1 class="title">{{ title }}</h1>
+                  </div>
+                  <div class="input-group mb-3">
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
+                        <i class="fa fa-search fa-2x fa-fw" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                </div>
+
+
+              <div class="table-container mat-elevation-z8">
+
+                  <div class="row justify-content-center">
+                      <div class="row col-md-4 ">
+                        <mat-form-field class="mx-auto">
+                          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                      </div>
+                      <div class="row col-md-4">
+                        <mat-form-field class="mx-auto">
+                          <mat-select [(value)]="selected" placeholder="Select Range">
+                            <mat-option>None</mat-option>
+                            <mat-option value="Daily">Daily</mat-option>
+                            <mat-option value="Weekly">Weekly</mat-option>
+                            <mat-option value="Monthly">Monthly</mat-option>
+                            <mat-option value="Quartrly">3 Months</mat-option>
+                            <mat-option value="Bi-Annually">6 Months</mat-option>
+                            <mat-option value="Yearly">Year</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                      <div class="row col-md-4">
+                        <mat-paginator class="mx-auto" [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+                        </mat-paginator>
+                      </div>
+                    </div>
+
+                  <mat-table #table [dataSource]="dataSource" matSort>
+
+                      <!-- Item No Column -->
+                      <ng-container matColumnDef="item">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Item Number</mat-header-cell>
+                        <mat-cell *matCellDef="let element"><a class="table-cell-color" routerLink="/update-sale">{{ element.item }}</a></mat-cell>
+                      </ng-container>
+
+                      <!-- Name Column -->
+                      <ng-container matColumnDef="name">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+                        <mat-cell *matCellDef="let element"><a class="table-cell-color" routerLink="/update-sale">{{ element.name }}</a></mat-cell>
+                      </ng-container>
+
+                      <!-- Original Price Column -->
+                      <ng-container matColumnDef="orgPrice">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Original Price</mat-header-cell>
+                        <mat-cell *matCellDef="let element"><a class="table-cell-color" routerLink="/update-sale">{{ element.orgPrice }}</a></mat-cell>
+                      </ng-container>
+
+                      <!-- Sales Price Column -->
+                      <ng-container matColumnDef="salePrice">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Sale Price</mat-header-cell>
+                        <mat-cell *matCellDef="let element"><a class="table-cell-color" routerLink="/update-sale">{{ element.salePrice }}</a></mat-cell>
+                      </ng-container>
+
+                      <!-- Start Date Column -->
+                      <ng-container matColumnDef="startDate">
+                          <mat-header-cell *matHeaderCellDef mat-sort-header>Start Date</mat-header-cell>
+                          <mat-cell *matCellDef="let element"><a class="table-cell-color" routerLink="/update-sale">{{ element.startDate }}</a></mat-cell>
+                      </ng-container>
+
+                      <!-- End Date Column -->
+                      <ng-container matColumnDef="endDate">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>End Date</mat-header-cell>
+                        <mat-cell *matCellDef="let element"><a class="table-cell-color" routerLink="/update-sale">{{ element.endDate }}</a></mat-cell>
+                    </ng-container>
+
+                      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                  </mat-table>
+              </div>
+
+            </mat-card>
+      </div>
+    </div>
+  </div>
+

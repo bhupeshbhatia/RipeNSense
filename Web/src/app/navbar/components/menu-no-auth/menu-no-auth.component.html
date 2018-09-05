@@ -1,0 +1,32 @@
+<nav
+ id="nav"
+ class="navbar navbar-expand-sm navbar-dark bg-black"
+>
+  <component-navbar-logo></component-navbar-logo>
+
+  <button
+   class="navbar-toggler navbar-toggler-right"
+   type="button"
+   (click)="isNavbarCollapsed = !isNavbarCollapsed"
+   [attr.aria-expanded]="!isNavbarCollapsed"
+   aria-controls="navbar" aria-expanded="false"
+   aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div
+   class="navbar-collapse collapse"
+   [ngbCollapse]="isNavbarCollapsed"
+   id="navbar"
+  >
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contact" (click)="navigateToThisPage('/contact')">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about" (click)="navigateToThisPage('/about')">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>

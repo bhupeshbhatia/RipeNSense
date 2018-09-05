@@ -1,0 +1,45 @@
+.container{
+    max-width: 800px;
+}
+
+h1 {
+    text-align: center;
+    color: #C92228;
+    margin-bottom: 48px;
+    font-weight: bolder;
+}
+
+mat-card{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.add-food-item-form-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: #333333;
+  }
+
+  .add-food-button {
+    background-color: #C92228;
+    border-color: #C92228;
+    font-weight: bolder;
+    margin-top: 40px;
+    width: 95%;
+}
+
+@media(max-width: 992px) {
+    .add-food-item-form-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        color: #333333;
+      }
+}
+
+.add-food-back-button {
+    background-color: #C92228;
+    border-color: #C92228;
+    font-weight: bolder;
+}

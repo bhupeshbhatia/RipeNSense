@@ -1,0 +1,27 @@
+.text-red {
+    color: #C92228;
+}
+
+.login-container-title {
+    margin-top: 18px;
+}
+
+.auth-forms-container {
+    min-height: 350px;
+}
+
+.submit-btn, ::ng-deep mat-ink-bar {
+    background-color: #C92228 !important;
+}
+
+.submit-btn {
+    color: white;
+}
+
+.mat-tab-labels {
+  justify-content: center !important;
+}
+
+mat-icon {
+    cursor: pointer;
+}

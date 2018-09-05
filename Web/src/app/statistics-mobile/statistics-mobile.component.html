@@ -1,0 +1,87 @@
+<div class="container d-md-none">
+  <div class="row">
+    <div class="col-12">
+      <mat-card>
+        <mat-card-content>
+          <h4 class="example-h2">Summary trends</h4>
+          <mat-form-field class="date-bottom-card">
+            <mat-select placeholder="Select Date">
+              <mat-option *ngFor="let date of dates" [value]="date.value"> {{ date.viewValue }} </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-card>
+            <mat-card-title> Ethylene </mat-card-title>
+            <mat-card-content>
+              <div class="demo-tab-content">
+                <img mat-card-image class="img-fluid" src="/static/Image/EthyleneGraph.JPG" /> </div>
+
+                <mat-accordion>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Ethyelene Trend
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <img mat-card-image class="statistics-images" src="/static/image/EthyleneTrend.png">
+                    </mat-expansion-panel>
+                  </mat-accordion>
+
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-title> Temperature </mat-card-title>
+            <mat-card-content>
+              <div class="demo-tab-content">
+                <img mat-card-image class="img-fluid" src="/static/Image/temperatureGraph.jpg"> </div>
+                <mat-accordion>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Temperature Trend
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <img mat-card-image class="responsive-img statistics-images" src="/static/image/TemperatureTrend.png">
+                    </mat-expansion-panel>
+                  </mat-accordion>
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-title> Humidity </mat-card-title>
+            <mat-card-content>
+              <div class="demo-tab-content">
+                <img mat-card-image class="img-fluid" src="/static/Image/humidtyGraph.jpg"> </div>
+                <mat-accordion>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Humidity Trend
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <img mat-card-image class="responsive-img statistics-images" src="/static/image/TemperatureTrend.png">
+                    </mat-expansion-panel>
+                  </mat-accordion>
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-title> Food saved </mat-card-title>
+            <mat-card-content>
+              <div class="demo-tab-content">
+                <img mat-card-image class="img-fluid" src="/static/Image/savingsGraph.jpg"> </div>
+                <mat-accordion>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Savings Trend
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <img mat-card-image class="responsive-img statistics-images" src="/static/image/SavingsTrend.png">
+                    </mat-expansion-panel>
+                  </mat-accordion>
+            </mat-card-content>
+          </mat-card>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+

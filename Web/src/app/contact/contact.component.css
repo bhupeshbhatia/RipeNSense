@@ -1,0 +1,56 @@
+h1 {
+    text-align: center;
+    color: #C92228;
+}
+
+.title {
+    margin-bottom: 48px;
+    font-weight: bolder;
+}
+
+mat-card{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#contact-description {
+    text-align: center;
+    font-weight: bold;
+    color: #333333;
+}
+
+.contact-form-container {
+    display: flex;
+    flex-direction: column;
+    color: #333333;
+  }
+
+  #contact-form-title {
+    font-weight: bolder;
+    color: #333333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .contact-info {
+    font-weight: bolder;
+    color: #333333;
+    margin-top: 45px;
+  }
+
+  #time-info{
+      margin-top:40px;
+  }
+
+  .col {
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+
+  .btn-primary {
+    background-color: #C92228;
+    border-color: #C92228;
+    font-weight: bolder;
+    margin-top: 40px;
+    color: white !important;
+}

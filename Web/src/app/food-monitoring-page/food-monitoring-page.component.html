@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <mat-card>
+        <mat-card-content>
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col text-left">
+                    <a class="btn btn-primary btn-sm report-back-button" routerLink="/">Back</a>
+                  </div>
+                  <div class="col text-right">
+                          <a class="btn btn-primary btn-sm" routerLink="/add-food-item">Add Food Item</a>
+                        </div></div>
+                <div class="container">
+                  <h1 class="title">{{ title }}</h1>
+                </div>
+            <div class="input-group mb-3">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
+                  <i class="fa fa-search fa-2x fa-fw" aria-hidden="true"></i>
+                </div>
+              </div>
+          </div>
+            <div class="mx-auto">
+              <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"> </mat-paginator>
+              <div class="table-container mat-elevation-z8">
+                <mat-table #table [dataSource]="dataSource" matSort>
+                  <!-- Item No Column -->
+                  <ng-container matColumnDef="item">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="monitoring-table-cell">Item Number</mat-header-cell>
+                    <mat-cell *matCellDef="let element" class="monitoring-table-cell">
+                      <a class="table-cell-color" routerLink="/update-food-item">{{ element.item }}</a>
+                    </mat-cell>
+                  </ng-container>
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="monitoring-table-cell">Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element" class="monitoring-table-cell">
+                      <a class="table-cell-color" routerLink="/update-food-item">{{ element.name }}</a>
+                    </mat-cell>
+                  </ng-container>
+                  <!-- Location Column -->
+                  <ng-container matColumnDef="location">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="monitoring-table-cell">Location</mat-header-cell>
+                    <mat-cell *matCellDef="let element" class="monitoring-table-cell">
+                      <a class="table-cell-color" routerLink="/update-food-item">{{ element.location }}</a>
+                    </mat-cell>
+                  </ng-container>
+                  <!-- Status Column -->
+                  <ng-container matColumnDef="status">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="monitoring-table-cell">Status</mat-header-cell>
+                    <mat-cell *matCellDef="let element" class="status-table-cell monitoring-table-cell"><a class="table-cell-color" routerLink="/update-food-item">&nbsp;</a></mat-cell>
+                  </ng-container>
+                  <!-- Expiry Column -->
+                  <ng-container matColumnDef="expiry">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="monitoring-table-cell">Expiry Date</mat-header-cell>
+                    <mat-cell *matCellDef="let element" class="monitoring-table-cell">
+                      <a class="table-cell-color" routerLink="/update-food-item">{{ element.expiry }}</a>
+                    </mat-cell>
+                  </ng-container>
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+              </div>
+            </div>
+
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+

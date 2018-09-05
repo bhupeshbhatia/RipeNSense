@@ -1,0 +1,20 @@
+.bg-black {
+  background-color: #1E1E1E;
+}
+
+.nav-link {
+  color: #D7D7D7 !important;
+}
+
+#navbar {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+span:hover{
+  color: rgb(8, 163, 8) !important;
+}

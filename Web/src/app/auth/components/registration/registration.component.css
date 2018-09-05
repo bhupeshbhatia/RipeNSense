@@ -1,0 +1,13 @@
+.login-container-title {
+    margin-top: 18px;
+    color: #C92228;
+}
+
+.auth-forms-container {
+    min-height: 350px;
+}
+
+.submit-btn {
+    background-color: #C92228;
+    color: white;
+}

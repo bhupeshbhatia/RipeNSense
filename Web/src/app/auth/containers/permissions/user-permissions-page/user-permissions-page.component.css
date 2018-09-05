@@ -1,0 +1,21 @@
+.btn-primary {
+    background-color: #C92228;
+    border-color: #C92228;
+    font-weight: bolder;
+    color: white !important;
+}
+
+.title {
+    margin-bottom: 30px;
+    font-weight: bolder;
+    text-align: center;
+    color: #C92228;
+}
+
+h1 {
+    text-align: center;
+    color: #C92228;
+}
+.container{
+    margin-top: 5%;
+}

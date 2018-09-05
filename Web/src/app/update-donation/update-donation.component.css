@@ -1,0 +1,54 @@
+.title {
+    margin-bottom: 48px;
+    font-weight: bolder;
+}
+
+h1 {
+    text-align: center;
+    color: #C92228;
+}
+
+.card-title {
+    text-align: center;
+    color: #C92228;
+    font-weight: bolder;
+}
+
+mat-card {
+    padding-top: 2%;
+}
+
+.card-content {
+    margin-top: 5%;
+}
+
+.donate-food-item-form-container {
+    /* width: 50%; */
+    display: flex;
+    flex-direction: column;
+    color: #333333;
+}
+
+.update-donation-back-button {
+    background-color: #C92228;
+    border-color: #C92228;
+    font-weight: bolder;
+}
+
+
+.update-donation-buttons {
+    background-color: #C92228;
+    border-color: #C92228;
+    font-weight: bolder;
+    margin-top: 15%;
+    width: 95%;
+}
+
+@media(max-width: 992px) {
+    .add-food-item-form-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        color: #333333;
+    }
+}

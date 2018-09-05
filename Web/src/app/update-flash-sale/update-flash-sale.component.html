@@ -1,0 +1,66 @@
+<div class="container">
+  <mat-card layout="row" layout-align="start center">
+
+      <div class="container">
+          <div class="row">
+            <div class="col text-left">
+              <a class="btn btn-primary btn-sm update-back-button" routerLink="/flash-sale">Back</a>
+            </div>
+            </div>
+          <div class="container">
+            <h1 class="title">{{ title }}
+            <br>{{ subtitle }}</h1>
+          </div>
+        </div>
+
+
+    <div class="container-fluid">
+      <div class="d-flex justify-content-center">
+        <div class="update-flash-sale-container col-md-8">
+          <mat-form-field>
+            <input matInput placeholder="Item number" type="number" value="19901235464" required>
+            <mat-icon
+            matSuffix
+            matTooltip="Click here to scan barcode with camera"
+            matTooltipPosition="right"
+            >crop_free</mat-icon>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Food Name" value="Granny Smith Apples" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Original Price" type="number" class="example-right-align" value="1.26" required>
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix>/lb</span>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Sale Price" type="number" class="example-right-align" value="0.99" required>
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix>/lb</span>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker1" placeholder="Start Date" [formControl]="date1" required>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker2" placeholder="End Date" [formControl]="date2" required>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+          <div class="row">
+            <div class="col text-left">
+              <a class="btn btn-primary btn-lg update-flash-sale-buttons" routerLink="/flash-sale" role="button">Back</a>
+            </div>
+            <div class="col text-center">
+              <a class="btn btn-primary btn-lg update-flash-sale-buttons" routerLink="/flash-sale" role="button">Delete</a>
+            </div>
+            <div class="col text-right">
+              <a class="btn btn-primary btn-lg update-flash-sale-buttons" routerLink="/flash-sale" role="button">Update</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

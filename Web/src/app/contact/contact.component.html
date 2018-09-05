@@ -1,0 +1,45 @@
+<mat-card>
+  <h1 class="title">{{ title }}</h1>
+  <div id="contact-description">Contact us by phone, email or fill out the contact form.</div>
+  <div class="container-fluid">
+    <div class="d-flex justify-content-center">
+      <div class="row">
+        <div class="col">
+          <div class="contact-info">
+            Call
+            <br> 1-800-345-6789
+          </div>
+          <div class="contact-info">
+            Email
+            <br> terrextech@gmail.com
+          </div>
+          <div id="time-info">
+            8:30 am - 11 pm (EST)
+            <br> Customer support is available 7 days a week,
+            <br> all 365 days of the year.
+          </div>
+        </div>
+        <div class="col-6">
+          <div id="contact-form-title">Contact Form:</div>
+          <div>
+            <div class="contact-form-container">
+              <mat-form-field>
+                <input matInput placeholder="Name" required>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Email" required>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Subject" required>
+              </mat-form-field>
+              <mat-form-field>
+                <textarea matInput placeholder="Enter your enquiry here." required></textarea>
+              </mat-form-field>
+              <a class="btn btn-primary btn-lg" href="#" role="button">Submit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

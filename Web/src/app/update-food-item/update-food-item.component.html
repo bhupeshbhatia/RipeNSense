@@ -1,0 +1,194 @@
+<div class="container">
+    <mat-card
+    layout="row"
+    layout-align="start center">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-left">
+              <a class="btn btn-primary btn-sm add-food-back-button" routerLink="/food-monitor">Back</a>
+            </div>
+  </div>
+          <div class="container text-center">
+            <h1 class="title">
+              {{ title }}<br>
+                {{ subtitle }}
+            </h1>
+          </div>
+    </div>
+
+      <!-- <h1 class="title">
+      {{ title }}
+        <br>
+        {{ subtitle }}
+      </h1> -->
+
+
+      <!-- <form [formGroup]="fg"> -->
+        <form (submit)="checkRequiredFields()">
+        <div class="d-flex justify-content-center">
+          <div class="add-food-item-form-container">
+            <mat-form-field>
+              <input
+              matInput
+              placeholder="Item number"
+              type="number"
+              value="100995222341"
+              required
+              [formControl]="itemNumberFormControl"
+              >
+              <mat-icon
+              matTooltip="Click here to scan barcode with camera"
+              matTooltipPosition="right"
+              matSuffix>crop_free
+              </mat-icon>
+
+              <mat-error
+              *ngIf="itemNumberFormControl.hasError('required')">
+              Item number is required.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+              matInput
+              placeholder="Food Name"
+              type="text"
+              value="Granny Smith Apples"
+              required
+              [formControl]="foodNameFormControl"
+              >
+              <mat-error
+                   *ngIf="foodNameFormControl.hasError('required')"
+                  >
+                    Food name is required.
+                  </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+              matInput
+              type="text"
+              value="Burlington, ON"
+              placeholder="Origin"
+              >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+              matInput
+              [matDatepicker]="picker1"
+              [formControl]="date1"
+              placeholder="Harvest Date"
+              >
+              <mat-datepicker-toggle
+              matSuffix
+              [for]="picker1">
+              </mat-datepicker-toggle>
+              <mat-datepicker
+              #picker1>
+            </mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+              matInput
+              [matDatepicker]="picker2"
+              placeholder="Arrival Date"
+              [formControl]="date2"
+              required
+              [formControl]="arrivalDateFormControl">
+              <mat-datepicker-toggle
+              matSuffix
+              [for]="picker2">
+            </mat-datepicker-toggle>
+
+              <mat-datepicker
+              #picker2>
+            </mat-datepicker>
+            <mat-error
+                   *ngIf="arrivalDateFormControl.hasError('required')"
+                  >
+                    Arrival date is required.
+                  </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+              matInput
+              placeholder="Quantity Monitored"
+              type="number"
+              value="52"
+              required
+              [formControl]="quantityMonitoredFormControl">
+              <span matSuffix>lbs</span>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+              matInput
+              placeholder="Price"
+              type="number"
+              class="example-right-align"
+              value="1.98"
+              required
+              [formControl]="priceFormControl">
+              <span matPrefix>$&nbsp;</span>
+              <span matSuffix>/lb</span>
+              <mat-error
+                *ngIf="priceFormControl.hasError('required')">
+                Price is required.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+              matInput
+              placeholder="Device Serial No."
+              value="RS97445GC"
+              required
+              [formControl]="deviceSerialFormControl">
+              <mat-error
+                *ngIf="deviceSerialFormControl.hasError('required')">
+                Device serial is required.
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+              matInput
+              type="text"
+              placeholder="Location"
+              value="Aisle 1 - Box 1"
+              required
+              [formControl]="locationFormControl">
+              <mat-error
+                *ngIf="priceFormControl.hasError('required')">
+                Location is required.
+              </mat-error>
+            </mat-form-field>
+
+            <div class="row">
+              <div class="col text-left">
+                <a class="btn btn-primary btn-lg add-food-button"
+                routerLink="/food-monitor"
+                role="button">Cancel</a>
+              </div>
+
+
+              <div class="col text-center">
+                  <a class="btn btn-primary btn-lg add-food-button"
+                  routerLink="/food-monitor"
+                  role="button">Delete</a>
+                </div>
+
+              <div class="col text-right">
+                <button type="submit" class="btn btn-primary btn-lg add-food-button">Update</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-card>
+  </div>

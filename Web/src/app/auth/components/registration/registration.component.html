@@ -1,0 +1,58 @@
+<mat-card-content class="auth-forms-container">
+    <mat-card-title class="
+    text-center
+    font-weight-bold
+    login-container-title
+  ">
+    <h1 class="font-weight-bold">
+        Request Account: Enterprise
+    </h1>
+  </mat-card-title>
+  <mat-card-subtitle class="text-center">
+    To create a new admin Enterprise account,
+    please fill out this enquiry form
+  </mat-card-subtitle>
+  <form>
+    <mat-form-field class="w-100">
+      <input
+       matInput
+       placeholder="Company Name"
+       [formControl]="companyNameFormControl"
+      />
+      <mat-error
+       *ngIf="companyNameFormControl.hasError('required')"
+      >
+        Please enter a valid Company Name
+      </mat-error>
+      <mat-error
+       *ngIf="companyNameFormControl.hasError('minlength')">
+          Company Name should be atleast 5 characters long
+      </mat-error>
+      <mat-error
+       *ngIf="companyNameFormControl.hasError('maxlength')">
+          Company Name cannot be longer than 20 characters
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-100 mt-1">
+      <input
+       matInput
+       placeholder="Email"
+       [formControl]="emailFormControl"
+      />
+      <mat-error
+       *ngIf="
+        emailFormControl.hasError('email')
+        || emailFormControl.hasError('required')
+       "
+      >
+        Please enter a valid Email
+      </mat-error>
+    </mat-form-field>
+
+    <button
+     mat-raised-button
+     class="submit-btn d-block mx-auto"
+    >Register</button>
+  </form>
+</mat-card-content>

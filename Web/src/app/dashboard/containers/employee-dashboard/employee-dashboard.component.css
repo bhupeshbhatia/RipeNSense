@@ -1,0 +1,16 @@
+.card-container {
+  margin-top: 7vh;
+}
+
+.icons-container {
+  max-width: 1260px;
+}
+
+.dash-icon-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.alert-badge {
+  /* margin-top: 50%; */
+}

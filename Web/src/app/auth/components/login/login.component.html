@@ -1,0 +1,83 @@
+<mat-card-content class="auth-forms-container">
+    <mat-card-title class="
+    text-center
+    font-weight-bold
+    login-container-title
+    text-red
+  ">
+    <h1 class="font-weight-bold">Login</h1>
+  </mat-card-title>
+
+  <form class="form-container">
+    <mat-form-field class="w-100">
+      <input
+       matInput
+       placeholder="Username"
+       [formControl]="formControls.username"
+       [(ngModel)]="loginModel.username"
+      />
+      <mat-error
+       *ngIf="formControls.username.hasError('required')"
+      >
+        Please enter a valid Username
+      </mat-error>
+      <mat-error
+       *ngIf="formControls.username.hasError('minlength')"
+      >
+        Username should be atleast 5 characters long
+      </mat-error>
+      <mat-error
+       *ngIf="formControls.username.hasError('maxlength')"
+      >
+        Username cannot be longer than 20 characters
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-100 mt-1">
+      <input
+       matInput
+       type=""
+       placeholder="Password"
+       [formControl]="formControls.password"
+       [type]="isPasswordInputVisible ? 'text' : 'password'"
+       [(ngModel)]="loginModel.password"
+      />
+      <mat-error
+       *ngIf="formControls.password.hasError('required')"
+      >
+        Please enter a valid Password
+      </mat-error>
+      <mat-icon
+       matSuffix
+       (click)="isPasswordInputVisible = !isPasswordInputVisible"
+      >
+        {{ isPasswordInputVisible ? 'visibility' : 'visibility_off' }}
+      </mat-icon>
+    </mat-form-field>
+
+    <div
+     class="text-center text-red mt-2"
+     [ngClass]="{'invisible': !isLoginFailed}"
+    >
+      Invalid Credentials. Try again.
+    </div>
+
+    <div class="text-center mt-3 mb-2">
+      <mat-checkbox>Remember Me</mat-checkbox>
+    </div>
+    <button
+     type="submit"
+     mat-raised-button
+     class="submit-btn d-block mx-auto"
+     (click)="login()"
+    >Login</button>
+
+    <br />
+    <div class="text-center">
+      <a class="text-red" href="#">
+        Forgot username or password?
+      </a>
+    </div>
+
+  </form>
+</mat-card-content>

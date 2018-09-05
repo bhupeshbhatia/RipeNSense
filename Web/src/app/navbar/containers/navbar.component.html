@@ -1,0 +1,11 @@
+<component-menu-no-auth
+ *ngIf="authLevel == 0"
+></component-menu-no-auth>
+
+<component-menu-employee-auth
+ *ngIf="authLevel == 1"
+></component-menu-employee-auth>
+
+<component-menu-corporate-auth
+ *ngIf="authLevel == 2"
+ ></component-menu-corporate-auth>

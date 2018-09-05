@@ -1,0 +1,112 @@
+<div class="d-none d-md-block">
+  <mat-card>
+      <div class="container">
+          <div class="row">
+            <div class="col text-left">
+              <a class="btn btn-primary btn-sm report-back-button" routerLink="/waste-summary">Summary Report</a>
+            </div>
+            <div class="col text-right">
+                    <a class="btn btn-primary btn-sm">Convert to PDF</a>
+                  </div></div>
+          <div class="container">
+            <h1 class="title">{{ title }}</h1>
+          </div>
+        </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
+        <i class="fa fa-search fa-2x fa-fw" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div class="table-container mat-elevation-z8">
+
+        <div class="row justify-content-center">
+            <div class="row col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <mat-form-field class="mx-auto">
+                <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="row col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <mat-form-field class="mx-auto">
+                <mat-select [(value)]="selected" placeholder="Select Range">
+                  <mat-option>None</mat-option>
+                  <mat-option value="Daily">Daily</mat-option>
+                  <mat-option value="Weekly">Weekly</mat-option>
+                  <mat-option value="Monthly">Monthly</mat-option>
+                  <mat-option value="Quartrly">3 Months</mat-option>
+                  <mat-option value="Bi-Annually">6 Months</mat-option>
+                  <mat-option value="Yearly">Year</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="row col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <mat-paginator class="mx-auto" [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+              </mat-paginator>
+            </div>
+          </div>
+
+      <mat-table #table [dataSource]="dataSource" matSort>
+
+        <!-- Item No Column -->
+        <ng-container matColumnDef="itemNo">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Item No.</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.itemNo }}</mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="sensorNo">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Sensor No.</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.sensorNo }}</mat-cell>
+        </ng-container>
+
+        <!-- Location Column -->
+        <ng-container matColumnDef="installationDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Installation Date</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.installationDate }}</mat-cell>
+        </ng-container>
+
+        <!-- Status Column -->
+        <ng-container matColumnDef="foodItemName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Food Item Name</mat-header-cell>
+          <mat-cell class="text-center" *matCellDef="let element">{{ element.foodItemName }}</mat-cell>
+        </ng-container>
+
+        <!-- Personnel Column -->
+        <ng-container matColumnDef="totalProduce">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Total Produce By Weight (Kg)</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.totalProduce }}</mat-cell>
+        </ng-container>
+
+        <!-- Sensor Replaced Column -->
+        <ng-container matColumnDef="wastedProduce">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Produce wasted by weight (Kg)</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.wastedProduce }}</mat-cell>
+        </ng-container>
+
+        <!-- Reason Column -->
+        <ng-container matColumnDef="unsoldProduce">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Produce unsold by weight (Kg)</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.unsoldProduce }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="priceSaved">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Price Saved ($)</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.priceSaved }}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+    <br />
+    <mat-card-subtitle class="text-center">
+      Report Generated By Employee #: 1100011
+    </mat-card-subtitle>
+  </mat-card>
+</div>
+
+<component-waste-report-mobile></component-waste-report-mobile>

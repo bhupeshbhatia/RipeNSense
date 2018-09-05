@@ -1,0 +1,56 @@
+<div layout-fill layout="column" layout-align="center none">
+  <div layout="row" layout-align="center none">
+    <mat-card class="example-card">
+      <mat-card-content>
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col text-left">
+                    <a class="btn btn-primary btn-sm report-back-button" routerLink="/">Back</a>
+                  </div>
+                  </div>
+                <div class="container">
+                  <h1 class="title">{{ title }}</h1>
+                </div>
+            <div class="input-group mb-3">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
+                  <i class="fa fa-search fa-2x fa-fw" aria-hidden="true"></i>
+                </div>
+              </div>
+          </div>
+
+        <!-- <form class="example-form">
+          <mat-form-field class="example-full-width">
+              <i class="fa fa-search fa-2x fa-fw search-icon-store"></i>
+            <input matInput placeholder="Search" value=""> </mat-form-field>
+        </form> -->
+        <div class="example-container mat-elevation-z8" layout-fill layout="column" layout-align="center none">
+          <mat-table #table [dataSource]="dataSource">
+            <!-- Position Column -->
+            <ng-container matColumnDef="storeNumber">
+              <mat-header-cell *matHeaderCellDef> Store No. </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.storeNumber }} </mat-cell>
+            </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="storeName">
+              <mat-header-cell *matHeaderCellDef> Store Name </mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.storeName }}</mat-cell>
+            </ng-container>
+            <!-- Weight Column -->
+            <ng-container matColumnDef="storeAddress">
+              <mat-header-cell *matHeaderCellDef> Store Address </mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.storeAddress }}</mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onSelectedRow(row)"></mat-row>
+          </mat-table>
+        </div>
+        <!--Error Message-->
+        <div class="alert alert-danger request-failed-alert" role="alert" *ngIf="hasRequestFailed">
+            <strong>Alert:</strong> Sorry there was an error submitting your request.
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+

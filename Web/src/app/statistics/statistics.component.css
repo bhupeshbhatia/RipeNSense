@@ -1,0 +1,92 @@
+.btn-primary {
+    background-color: #C92228;
+    border-color: #C92228;
+    font-weight: bolder;
+    color: white !important;
+}
+
+.title {
+    font-weight: bolder;
+    text-align: center;
+    color: #C92228;
+}
+
+/* .stat-selection-card {
+    margin: auto;
+} */
+
+.form-selection-card-top {
+    display: flex;
+    flex-direction: column;
+    color: #333333;
+}
+
+.example-section {
+    /* align-content: center; */
+    /* align-items: center; */
+    /* width: 60%; */
+    /* margin: auto; */
+}
+
+.example-margin {
+    margin: 0% 4%;
+}
+
+#critical-check {
+    color: red;
+}
+
+#moderate-check {
+    color: orange;
+}
+
+#normal-check {
+    color: green;
+}
+
+#label-checkboxes {
+    color: gray;
+}
+
+.date-bottom-card {
+    margin-left: 60%;
+    width: 40%;
+}
+
+.statistics-images {
+
+    width: 100%;
+}
+
+.sensor-stats-image {
+    padding: 5%;
+}
+
+.sensor-stat-div {
+    margin: auto;
+}
+
+.statistics-form-container {
+    display: flex;
+    flex-direction: column;
+    color: #333333;
+}
+
+
+/* .mat-expansion-panel:not(.mat-expanded) {
+    height: 0px !important;
+    visibility: hidden !important;
+}
+
+.mat-expansion-panel-header  {
+    height: 48px;
+} */
+
+::ng-deep div.mat-expansion-panel-content:not(.mat-expanded) {
+    height: 0;
+    visibility: hidden;
+}
+
+.mat-expansion-panel-header  {
+    height: 48px;
+}

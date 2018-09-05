@@ -1,0 +1,7 @@
+.form-container {
+  margin-top: -9.8%;
+}
+
+::ng-deep .mat-tab-labels {
+  /* justify-content: center !important; */
+}

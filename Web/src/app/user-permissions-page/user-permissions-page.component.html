@@ -1,0 +1,22 @@
+<div class="mx-auto col-xs-6 col-sm-12 col-md-6 col-xl-6">
+<mat-card>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col text-left">
+      <a class="btn btn-primary btn-sm" routerLink="/add-user">Back</a>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="row">
+    <div class="col-6 col-sm-6 text-right">
+      <a class="btn btn-primary btn-lg" (click)="open()" routerLink="/add-user">Cancel</a>
+    </div>
+    <div class="col-6 col-sm-6 text-left">
+      <a class="btn btn-primary btn-lg" (click)="open('Confirmation', 'New Account Created',['Close'])" routerLink="/manage-user">Done</a>
+    </div>
+  </div>
+</div>
+</mat-card>
+</div>

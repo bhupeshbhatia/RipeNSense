@@ -1,0 +1,38 @@
+h1 {
+    text-align: center;
+    color: #C92228;
+}
+
+.btn-primary {
+    color: white !important;
+}
+
+.sensor-main-buttons {
+    max-width: 330px;
+    margin-bottom: 5%;
+    background-color: #333333;
+    border-color:#333333;
+    font-weight: bolder;
+    min-width: 200px;
+}
+
+mat-card-subtitle {
+    width: 100%;
+    color: #C92228;
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+
+
+.report-back-button {
+    background-color: #C92228;
+    border-color: #C92228;
+    font-weight: bolder;
+}
+
+.title {
+    font-weight: bolder;
+    text-align: center;
+    /* color: #C92228; */
+}

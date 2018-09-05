@@ -1,0 +1,48 @@
+<div class="container">
+  <mat-card layout="row" layout-align="start center" class="offset-md-1 col-md-10">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col text-left">
+          <a class="btn btn-primary btn-sm" routerLink="/">Back</a>
+        </div>
+        <div class="col text-right">
+          <a class="btn btn-primary btn-sm" routerLink="/add-user">Add User</a>
+        </div>
+      </div>
+      <div class="container">
+        <h1 class="title">{{ title }}</h1>
+      </div>
+    </div>
+
+    <div class="input-group mb-3 offset-md-2 col-md-8">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
+        <i class="fa fa-search fa-2x fa-fw" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <mat-table #table [dataSource]="dataSource" matSort class="offset-md-2 col-md-8">
+
+      <!-- Item No Column -->
+      <ng-container matColumnDef="username">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Username</mat-header-cell>
+        <mat-cell *matCellDef="let element"><a class="green-color" routerLink="/update-user">{{ element.username }}</a></mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+        <mat-cell *matCellDef="let element"><a class="green-color" routerLink="/update-user">{{ element.name }}</a></mat-cell>
+      </ng-container>
+
+      <!-- Location Column -->
+      <ng-container matColumnDef="accountType">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Account Type</mat-header-cell>
+        <mat-cell *matCellDef="let element"><a class="green-color" routerLink="/update-user">{{ element.accountType }}</a></mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    </mat-card>
+  </div>

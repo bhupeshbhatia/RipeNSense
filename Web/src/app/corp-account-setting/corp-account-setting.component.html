@@ -1,0 +1,24 @@
+<div class="container account-setting-container">
+  <mat-card class="account-setting-card">
+    <mat-card-content layout="row" layout-align="start center">
+      <h2 class="text-center edit-account-title">Account Setting</h2>
+      <mat-tab-group class="demo-tab-group">
+        <mat-tab label="Account">
+          <div class="demo-tab-content">
+            <component-account-tab></component-account-tab>
+          </div>
+        </mat-tab>
+        <mat-tab label="Password">
+          <div class="demo-tab-content">
+            <component-password-tab></component-password-tab>
+          </div>
+        </mat-tab>
+        <mat-tab label="Sensors" *ngIf="isEmployee">
+          <div class="demo-tab-content">
+            <component-sensor-tab></component-sensor-tab>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>

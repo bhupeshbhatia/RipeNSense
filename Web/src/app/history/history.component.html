@@ -1,0 +1,65 @@
+<div>
+    <mat-card class="offset-md-2 col-md-8">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col text-left">
+              <a class="btn btn-primary btn-sm" routerLink="/">Back</a>
+            </div>
+          </div>
+          <div class="container">
+            <h1 class="title">{{ title }}</h1>
+          </div>
+          <div class="input-group mb-3 offset-md-2 col-md-8">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
+                <i class="fa fa-search fa-2x fa-fw" aria-hidden="true"></i>
+              </div>
+            </div>
+        </div>
+
+        <div class="history-dropdown offset-md-3 col-md-6">
+            <mat-form-field>
+              <mat-select placeholder="View changes for:" [(value)]="selected">
+                <mat-option value="today">Today</mat-option>
+                <mat-option value="yesterday">Yesterday</mat-option>
+                <mat-option value="last7days">Last 7 days</mat-option>
+                <mat-option value="last14days">Last 14 days</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+      <mat-paginator
+       [length]="100"
+       [pageSize]="10"
+       [pageSizeOptions]="[5, 10, 25, 100]"
+       class="col-11"
+      >
+      </mat-paginator>
+      <div class="table-container mat-elevation-z8" class="offset-md-1 col-md-10">
+          <mat-table #table [dataSource]="dataSource" matSort>
+
+              <!-- Date Column -->
+              <ng-container matColumnDef="date">
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="dispose-table-cell">Date</mat-header-cell>
+                <mat-cell *matCellDef="let element" class="dispose-table-cell">{{ element.date }}</mat-cell>
+              </ng-container>
+
+              <!-- Time Column -->
+              <ng-container matColumnDef="time">
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="dispose-table-cell">Time</mat-header-cell>
+                <mat-cell *matCellDef="let element" class="dispose-table-cell">{{ element.time }}</mat-cell>
+              </ng-container>
+
+              <!-- Change Column -->
+              <ng-container matColumnDef="change">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header class="dispose-table-cell">Changes</mat-header-cell>
+                  <mat-cell *matCellDef="let element" class="dispose-table-cell">{{ element.change }}</mat-cell>
+              </ng-container>
+
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+      </div>
+
+    </mat-card>
+  </div>

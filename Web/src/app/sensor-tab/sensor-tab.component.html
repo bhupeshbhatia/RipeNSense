@@ -1,0 +1,33 @@
+<div class="example-container mat-elevation-z8 align-content-center">
+  <mat-table #table [dataSource]="dataSource">
+    <!-- Position Column -->
+    <ng-container matColumnDef="serialNumber">
+      <mat-header-cell *matHeaderCellDef> Serial Number </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.serialNumber }} </mat-cell>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="modelNumber">
+      <mat-header-cell *matHeaderCellDef> Model Number </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.modelNumber }} </mat-cell>
+    </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.status }} </mat-cell>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="location">
+      <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.location }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="deleteSensor">
+        <mat-header-cell *matHeaderCellDef> Remove? </mat-header-cell>
+        <mat-cell *matCellDef="let element"><mat-icon><a href="#" id="remove-sensor-icon" (click)="open('Remove Sensor?', 'Are you sure you want to delete the sensor?', ['Yes', 'No'])">{{ element.deleteSensor }}</a></mat-icon> </mat-cell>
+      </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+

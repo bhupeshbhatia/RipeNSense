@@ -1,0 +1,15 @@
+<div class="circle mx-auto icon-{{ color }}">
+  <a routerLink="{{ url }}" class="icon-{{ color }}">
+
+    <mat-chip-list *ngIf="hasBadge" class="alert-badge">
+      <mat-chip class="badge-property">{{ badgeText }}</mat-chip>
+    </mat-chip-list>
+    <div class="text-center">
+      <i class="fa {{ icon }} dash-icon" [ngClass]="{'badge-icon' : hasBadge}"></i>
+      <br />
+      <span class="icon-text">
+        <ng-content></ng-content>
+      </span>
+    </div>
+  </a>
+</div>

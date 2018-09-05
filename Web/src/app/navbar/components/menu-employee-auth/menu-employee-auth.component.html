@@ -1,0 +1,48 @@
+<nav id="nav" class="navbar navbar-expand-sm navbar-dark bg-black">
+    <component-navbar-logo></component-navbar-logo>
+
+  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" [attr.aria-expanded]="!isNavbarCollapsed"
+    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse collapse" [ngbCollapse]="isNavbarCollapsed" id="navbar">
+    <ul class="navbar-nav nav ml-auto">
+      <li class="nav-item">
+        <a routerLink="/dashboard" (click)="navigateToThisPage('/dashboard')"><span class="nav-link">Home</span></a>
+      </li>
+      <li class="nav-item">
+        <a [matMenuTriggerFor]="storeMenu">
+          <span class="nav-link underline">Store: Loblaws</span>
+        </a>
+        <mat-menu #storeMenu="matMenu" xPosition="after" yPosition="below" [overlapTrigger]="false">
+          <ng-template matMenuContent>
+            <button mat-menu-item color="primary">
+              Store ID: 1
+            </button>
+            <button mat-menu-item>(Street Address)</button>
+            <button mat-menu-item>1-888-888-8888</button>
+            <button mat-menu-item (click)="navigateToThisPage('/store-locations')">View other stores</button>
+          </ng-template>
+        </mat-menu>
+      </li>
+      <li class="nav-item">
+        <mat-menu #appMenu="matMenu" xPosition="after" yPosition="below" [overlapTrigger]="false">
+          <ng-template matMenuContent>
+            <button mat-menu-item (click)="navigateToThisPage('/account-setting')">Account</button>
+            <a mat-menu-item routerLink="/get-help" (click)="navigateToThisPage('/get-help')">Get Help</a>
+            <!-- <button mat-menu-item url="/get-help">Get Help</button> -->
+            <button mat-menu-item>Log Out</button>
+          </ng-template>
+        </mat-menu>
+        <a mat-icon-button [matMenuTriggerFor]="appMenu">
+          <span class="nav-link underline">
+            Logged in as: Manager
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+

@@ -1,0 +1,68 @@
+<div class="container col-md-8">
+  <mat-card layout="row" layout-align="start center">
+    <mat-card-title>
+
+        <div class="container">
+            <div class="row">
+              <div class="col text-left">
+                <a class="btn btn-primary btn-sm update-donation-back-button" routerLink="/donate-food">Back</a>
+              </div>
+              </div>
+            <div class="container">
+              <h1 class="title">{{ title }}</h1>
+            </div>
+          </div>
+
+    </mat-card-title>
+    <mat-card-content class="card-content">
+      <!-- <div class="container">
+        <div class="d-flex justify-content-center"> -->
+          <div class="donate-food-item-form-container offset-md-2 col-md-8">
+            <mat-form-field>
+              <input
+              matInput
+              placeholder="Item number"
+              type="number" required>
+              <mat-icon
+              matSuffix
+              matTooltip="Click here to scan barcode with camera"
+              matTooltipPosition="right">
+              crop_free</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input
+              matInput
+              placeholder="Food Name"
+              required>
+            </mat-form-field>
+            <mat-form-field>
+              <input
+              matInput
+              placeholder="Quantity to Donate"
+              type="number"
+              required>
+              <span matSuffix>lbs</span>
+            </mat-form-field>
+            <mat-form-field>
+              <input
+              matInput
+              placeholder="Donate To"
+              required>
+            </mat-form-field>
+            <div class="row">
+              <div class="col text-left">
+                <a class="btn btn-primary btn-lg update-donation-buttons" routerLink="/donate-food" role="button">Back</a>
+              </div>
+              <div class="col text-center">
+                <a class="btn btn-primary btn-lg update-donation-buttons" routerLink="/donate-food" role="button">Delete</a>
+              </div>
+              <div class="col text-right">
+                <a class="btn btn-primary btn-lg update-donation-buttons" routerLink="/donate-food" role="button">Update</a>
+              </div>
+            </div>
+          </div>
+        <!-- </div>
+      </div> -->
+    </mat-card-content>
+  </mat-card>
+</div>
